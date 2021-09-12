@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <RestoreSuccess Condition=" '$(RestoreSuccess)' == '' ">True</RestoreSuccess>
+    <RestoreTool Condition=" '$(RestoreTool)' == '' ">NuGet</RestoreTool>
+    <ProjectAssetsFile Condition=" '$(ProjectAssetsFile)' == '' ">$(MSBuildThisFileDirectory)AllDependencies.json</ProjectAssetsFile>
+    <NuGetPackageRoot Condition=" '$(NuGetPackageRoot)' == '' ">$(UserProfile)\.nuget\packages\</NuGetPackageRoot>
+    <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">C:\Users\91836\.nuget\packages\</NuGetPackageFolders>
+    <NuGetProjectStyle Condition=" '$(NuGetProjectStyle)' == '' ">Unknown</NuGetProjectStyle>
+    <NuGetToolVersion Condition=" '$(NuGetToolVersion)' == '' ">5.8.0</NuGetToolVersion>
+  </PropertyGroup>
+  <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <SourceRoot Include="$([MSBuild]::EnsureTrailingSlash($(NuGetPackageFolders)))" />
+  </ItemGroup>
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <PkgAWSSDK_Core Condition=" '$(PkgAWSSDK_Core)' == '' ">C:\Users\91836\.nuget\packages\awssdk.core\3.7.0.42</PkgAWSSDK_Core>
+    <PkgAWSSDK_SimpleSystemsManagement Condition=" '$(PkgAWSSDK_SimpleSystemsManagement)' == '' ">C:\Users\91836\.nuget\packages\awssdk.simplesystemsmanagement\3.7.3.22</PkgAWSSDK_SimpleSystemsManagement>
+    <PkgAWSSDK_S3 Condition=" '$(PkgAWSSDK_S3)' == '' ">C:\Users\91836\.nuget\packages\awssdk.s3\3.7.1.11</PkgAWSSDK_S3>
+    <PkgAWSSDK_IdentityManagement Condition=" '$(PkgAWSSDK_IdentityManagement)' == '' ">C:\Users\91836\.nuget\packages\awssdk.identitymanagement\3.7.2.19</PkgAWSSDK_IdentityManagement>
+    <PkgAWSSDK_EC2 Condition=" '$(PkgAWSSDK_EC2)' == '' ">C:\Users\91836\.nuget\packages\awssdk.ec2\3.7.16.2</PkgAWSSDK_EC2>
+  </PropertyGroup>
+</Project>

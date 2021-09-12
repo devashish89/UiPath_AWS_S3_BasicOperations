@@ -1,0 +1,173 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="960,1174" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:uaa="clr-namespace:UiPath.AmazonWebServices.Activities;assembly=UiPath.AmazonWebServices.Activities" xmlns:uaasb="clr-namespace:UiPath.AmazonWebServices.Activities.S3.Buckets;assembly=UiPath.AmazonWebServices.Activities" xmlns:uaaso="clr-namespace:UiPath.AmazonWebServices.Activities.S3.Objects;assembly=UiPath.AmazonWebServices.Activities" xmlns:uac="clr-namespace:UiPath.AmazonWebServices.Core;assembly=UiPath.AmazonWebServices" xmlns:uam="clr-namespace:UiPath.AmazonWebServices.Models;assembly=UiPath.AmazonWebServices" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="38">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.AmazonWebServices.Core</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.AmazonWebServices.Activities</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>System.Net</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.AmazonWebServices.Models</x:String>
+      <x:String>UiPath.AmazonWebServices.Activities.S3.Buckets</x:String>
+      <x:String>UiPath.AmazonWebServices.Activities.S3.Objects</x:String>
+      <x:String>System.Threading.Tasks</x:String>
+      <x:String>System.Threading</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="28">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>UiPath.AmazonWebServices</AssemblyReference>
+      <AssemblyReference>UiPath.AmazonWebServices.Activities</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap:VirtualizedContainerService.HintSize="476,1009" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="uam:AWSS3Bucket" Name="bucket_squad" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uaa:AWSScope IAMRole="{x:Null}" AccessKeyId="AKIAWWT23VTGRNPYLLJS" DisplayName="Amazon Web Services Scope" sap:VirtualizedContainerService.HintSize="434,917" sap2010:WorkflowViewState.IdRef="AWSScope_1" Region="us-east-2" SecretAccessKey="[new System.net.NetworkCredential(&quot;&quot;,&quot;ANftuFN+3cPFwv/yzrIN+NOp4gxD0aWcFRogeJSK&quot;).SecurePassword]">
+      <uaa:AWSScope.Body>
+        <ActivityAction x:TypeArguments="uac:AWSCmd">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="uac:AWSCmd" Name="AmazonWebServicesScopePropertyTag" />
+          </ActivityAction.Argument>
+          <Sequence sap:VirtualizedContainerService.HintSize="272,831" sap2010:WorkflowViewState.IdRef="Sequence_4">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="uam:AWSS3Bucket" Name="bucket_hello" />
+              <Variable x:TypeArguments="uam:AWSS3Object" Name="obj1" />
+              <Variable x:TypeArguments="uam:AWSS3Object" Name="destObj" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="230,51" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+              <ui:CommentOut.Body>
+                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="314,307" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Sequence DisplayName="create bucket" sap:VirtualizedContainerService.HintSize="272,215" sap2010:WorkflowViewState.IdRef="Sequence_1">
+                    <Sequence.Variables>
+                      <Variable x:TypeArguments="uam:AWSS3Bucket" Name="bucket_asd" />
+                    </Sequence.Variables>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <uaasb:AWSCreateBucket AWSEncryptionKey="{x:Null}" Tags="{x:Null}" Bucket="[bucket_asd]" DefaultEncryption="None" DisplayName="Create Bucket" EnableObjectLock="False" EnableVersioning="False" sap:VirtualizedContainerService.HintSize="230,22" sap2010:WorkflowViewState.IdRef="AWSCreateBucket_1" KeyName="automationsquaddemo" />
+                    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="230,61" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[bucket_asd.Name]" />
+                  </Sequence>
+                </Sequence>
+              </ui:CommentOut.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:CommentOut>
+            <uaasb:AWSGetBucket BucketDetails="{x:Null}" Bucket="[bucket_squad]" BucketName="automationsquaddemo" DisplayName="Get Bucket" sap:VirtualizedContainerService.HintSize="230,22" sap2010:WorkflowViewState.IdRef="AWSGetBucket_1" IncludeDetails="False" />
+            <uaaso:AWSUploadSingleObject ContentType="{x:Null}" EncryptionKey="{x:Null}" Object="{x:Null}" Permissions="{x:Null}" Tags="{x:Null}" Timeout="{x:Null}" Bucket="[bucket_squad]" DisplayName="Upload Object from File" Encryption="None" FileToUpload="devashish.jpg" sap:VirtualizedContainerService.HintSize="230,22" sap2010:WorkflowViewState.IdRef="AWSUploadSingleObject_1" ObjectKeyName="devashish_uploaded.jpg" StorageClass="Standard" />
+            <uaaso:AWSUploadMultipleObjects EncryptionKey="{x:Null}" Prefix="{x:Null}" Tags="{x:Null}" Timeout="{x:Null}" Bucket="[bucket_squad]" DisplayName="Upload Objects from Folder" Encryption="None" Folder="test_folder" sap:VirtualizedContainerService.HintSize="230,22" sap2010:WorkflowViewState.IdRef="AWSUploadMultipleObjects_1" IncludeSubFolders="True" StorageClass="Standard" />
+            <uaaso:AWSForEachObject CurrentIndex="{x:Null}" Prefix="{x:Null}" Result="{x:Null}" TagKey="{x:Null}" TagValue="{x:Null}" Bucket="[bucket_squad]" DisplayName="For Each Object in Bucket" sap:VirtualizedContainerService.HintSize="230,51" sap2010:WorkflowViewState.IdRef="AWSForEachObject_1" IncludeVersionsInfo="False" SkipFolders="False">
+              <uaaso:AWSForEachObject.Body>
+                <ActivityAction x:TypeArguments="uam:AWSS3Object">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="uam:AWSS3Object" Name="s3Object" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="272,316" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                    <Sequence.Variables>
+                      <Variable x:TypeArguments="x:String" Name="fullPath" />
+                    </Sequence.Variables>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="230,61" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="[s3Object.KeyName+&quot;||&quot;+s3Object.Path]" />
+                    <uaaso:AWSDownloadSingleObject ObjectVersionID="{x:Null}" Timeout="{x:Null}" CreateSubfolderStructure="False" DisplayName="Download Object to File" FileName="[Path.GetFileName(s3Object.Path)]" FilePath="[fullPath]" Folder="[Environment.CurrentDirectory]" sap:VirtualizedContainerService.HintSize="230,22" sap2010:WorkflowViewState.IdRef="AWSDownloadSingleObject_1" Object="[s3Object]" Overwrite="True" />
+                    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="230,61" sap2010:WorkflowViewState.IdRef="WriteLine_3" Text="[fullPath]" />
+                  </Sequence>
+                </ActivityAction>
+              </uaaso:AWSForEachObject.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uaaso:AWSForEachObject>
+            <uaasb:AWSGetBucket BucketDetails="{x:Null}" Bucket="[bucket_hello]" BucketName="hellonamaste" DisplayName="Get Bucket" sap:VirtualizedContainerService.HintSize="230,22" sap2010:WorkflowViewState.IdRef="AWSGetBucket_2" IncludeDetails="False" />
+            <uaaso:AWSGetObject Bucket="[bucket_squad]" DisplayName="Get Object" sap:VirtualizedContainerService.HintSize="230,22" sap2010:WorkflowViewState.IdRef="AWSGetObject_1" IncludeVersions="False" Object="[obj1]" ObjectKeyName="hello.txt" />
+            <uaaso:AWSCopyObject SourceObjectVersionId="{x:Null}" DestinationBucket="[bucket_hello]" DestinationObject="[destObj]" DestinationObjectKeyName="hello_copy.txt" DisplayName="Copy Object" sap:VirtualizedContainerService.HintSize="230,22" sap2010:WorkflowViewState.IdRef="AWSCopyObject_1" SourceObject="[obj1]" />
+            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="230,61" sap2010:WorkflowViewState.IdRef="WriteLine_4" Text="[destObj.KeyName+&quot;****&quot;]" />
+            <uaaso:AWSDeleteSingleObject VersionId="{x:Null}" DisplayName="Delete Single Object" sap:VirtualizedContainerService.HintSize="230,22" sap2010:WorkflowViewState.IdRef="AWSDeleteSingleObject_1" Object="[destObj]" />
+            <uaasb:AWSDeleteBucket Bucket="[bucket_hello]" DisplayName="Delete Bucket" sap:VirtualizedContainerService.HintSize="230,22" sap2010:WorkflowViewState.IdRef="AWSDeleteBucket_1" />
+          </Sequence>
+        </ActivityAction>
+      </uaa:AWSScope.Body>
+    </uaa:AWSScope>
+  </Sequence>
+</Activity>
